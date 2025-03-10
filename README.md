@@ -12,6 +12,9 @@ The Handy development environment requires the following:
 
 Cloanto software offers [Amiga Forever](https://www.amigaforever.com/) software that provides various versions of Kickstart ROMs and Workbench hardfiles for nearly every Amiga system. It is a legal way to acquire the files needed to work with an emulated Amiga environment.
 
+![Lynx Development System on WinUAE](HandyWorkbench135.png)
+![Lynx Development System on WinUAE](HandyWorkbench311.png)
+
 ## Diskettes for Lynx Development System
 
 The folder `adf` contains 8 diskette images in Amiga Disk File format.
