@@ -60,11 +60,11 @@ The newly created hardfile will automatically be selected at the top dropdown. N
 |Reserved|2|
 |Block size|512|
 
-![alt text](winuae-create-hardfile.png)
+![alt text](assets/winuae-create-hardfile.png)
 
  Insert the "AmigaOS 3.1 Install" floppy diskette into `DF0` (`amiga-os-310-install.adf`) and start the emulator. After the booting has completed, open the drawer `HDTools` and select the `HDToolBox` icon. Do not start it, but instead open the "Information" dialog by keeping the right mouse button pressed and going to the top menu in Workbench.
 
-![alt text](hdtoolbox-information.png)
+![alt text](assets/hdtoolbox-information.png)
 
 Check the lines of the "Tool types" that read:
 
@@ -75,7 +75,7 @@ SCSI_MAX_LUN=7
 XT_NAME=  XT
 ```
 
-![alt text](hdtoolbox-edit-scsi.png)
+![alt text](assets/hdtoolbox-edit-scsi.png)
 
 Select the top line so it appears in the textbox next to the `New` and `Del` buttons. Change the line to use `uaehf.device` so the single line textbox becomes:
 
@@ -87,23 +87,23 @@ Make sure to press `Enter` before clicking on `Save`.
 
 Start *HDToolBox* and find the new harddisk available as an SCSI interface with `Unknown` status.
 
-![alt text](hdtoolbox-startup.png)
+![alt text](assets/hdtoolbox-startup.png)
 
 Click on `Change Drive Type` and in the next dialog delete any existing drive types by selecting the drive type in the listbox and clicking on `Delete Old` until all have been deleted and the drive type listbox is empty. 
 
-![alt text](hdtoolbox-empty-drivetypes.png)
+![alt text](assets/hdtoolbox-empty-drivetypes.png)
 
 Next, click on `Define New...` to open a new dialog. 
 
-![alt text](hdtoolbox-new-drivetype.png)
+![alt text](assets/hdtoolbox-new-drivetype.png)
 
 Click the `Read Configuration` button. A message box appears to indicate that most information will be inferred from the drive. 
 
-![alt text](hdtoolbox-read-configuration.png)
+![alt text](assets/hdtoolbox-read-configuration.png)
 
 Click `Continue` to read this information.
 
-![alt text](hdtoolbox-new-configuration.png)
+![alt text](assets/hdtoolbox-new-configuration.png)
 
 Change the `Drive Name` to be `epyx` for your Epyx specific harddisk. Click the `Ok` button and in the next dialog `Ok` again.
 
@@ -111,48 +111,48 @@ Change the `Drive Name` to be `epyx` for your Epyx specific harddisk. Click the 
 
 You should now see that the other buttons also became available.
 
-![alt text](hdtoolbox-more-buttons.png)
+![alt text](assets/hdtoolbox-more-buttons.png)
 
 Select the `epyx` drive and click the `Partition Drive` button.
 
 The "Partitioning" dialog opens and shows existing partitions. 
 
-![alt text](hdtoolbox-default-partitions.png)
+![alt text](assets/hdtoolbox-default-partitions.png)
 
 Delete any existing partitions. Click the left side of the disk layout drawing at the top and move the triangle shaped slider at the bottom of it to the left. The size of the first partition should be around 5 MB, sufficient for the few files that will be stored. Enter the `End Cyl` as `330` for the end cylinder.
 
-![alt text](hdtoolbox-first-partition.png)
+![alt text](assets/hdtoolbox-first-partition.png)
 
 Change the `Partition Device Name` to `DH0`, press `Enter`. Select the `Bootable` and `Advanced Options` checkboxes. The dialog will show additional options including button `Change...` and `Add/Update...` to configure the file system types. Click the `Change...` button.
 
-![alt text](hdtoolbox-dh0-filesystem.png)
+![alt text](assets/hdtoolbox-dh0-filesystem.png)
 
 In the "File System Characteristics" dialog edit the `MaxTransfer` value to be `0x0001fe00`. Uncheck the `Fast File System` and `International Mode` checkboxes. Click on `Ok` to return to the "Partitioning" dialog.
 
 Create another partition by clicking the `New Partition` button. Click to the right of the first 5 MB `DH0` partition in the black rectangle indicating the remaining space on the disk.
 
-![alt text](hdtoolbox-second-partition.png)
+![alt text](assets/hdtoolbox-second-partition.png)
 
 Set the `Partition Device Name` to be `DH0B` and press `Enter` again. Make sure that the drive is not marked as `Bootable`, since it should not be booted from.
 
 Go into "File System Characteristics" dialog by clicking `Change...`. Uncheck the `Auto-mounted this partition` to prevent automatic mounting of this partition as a drive. The startup script will take care of this later. 
 Also, change the `MaxTransfer` value to be `0x1fe00` again. Click on `Ok` to save the changes in the current dialog.
 
-![alt text](hdtoolbox-dh0b-filesystem.png)
+![alt text](assets/hdtoolbox-dh0b-filesystem.png)
 
 Back in the "Partitioning" dialog, click on the `Add/Update...` button. The "File System Management" dialog opens and it will probably show an existing `FastFileSytem` file system name of version 40.1 and identifier `0x444f5301`. This is not the correct file system, as the one included with the Handy development kit is of a different version.
 
 Insert the "Handy Boot Disk" diskette `handy-16-boot.adf` into floppy drive `DF1`. Next, click on `Add New File System...` to add a different version of FastFileSystem.
 
-![alt text](hdtoolbox-enter-fastfilesystem.png)
+![alt text](assets/hdtoolbox-enter-fastfilesystem.png)
 
 The inserted Handy boot diskette is labeled `V1.3Boot`. You can provide the filename of the correct FastFileSystem as `V1.3Boot:l/FastFileSystem`. Click `Ok` and provide the version details of the FastFileSystem in the dialog that appears. It should be version `34` and revision `85`.
 
-![alt text](hdtoolbox-filesystem-details.png)
+![alt text](assets/hdtoolbox-filesystem-details.png)
 
 The DosType for the file system should be `0x444f5303`, which corresponds to the hexadecimal values for the characters `DOS3`. Click `Ok` to return to the "File System Maintenance" dialog that now shows an additional file system registered with a size of 12204 bytes. 
 
-![alt text](hdtoolbox-multiple-filesystems.png)
+![alt text](assets/hdtoolbox-multiple-filesystems.png)
 
 Delete the newer version `40.1` of the file system named `Fast File System`. Click `Ok` to return to the "Partitioning" dialog and close it by clicking `Ok` once more. Back in the "Hard Drive Preparation, Partitioning and Formatting" dialog you should see that the listed `epyx` harddrive now has a status of `Changed`. Commit the changes by clicking on the `Save Changes to Drive` button.
 
@@ -160,12 +160,12 @@ Delete the newer version `40.1` of the file system named `Fast File System`. Cli
 >
 > If you accidentally forgot to remove the `40.1` version of the file system, you will get an error indicating there is not enough room on the disk to save the changes.
 >
-> ![alt text](hdtoolbox-space-warning1.png)
-> ![alt text](hdtoolbox-space-warning2.png)
+> ![alt text](assets/hdtoolbox-space-warning1.png)
+> ![alt text](assets/hdtoolbox-space-warning2.png)
 >
 > If so, retrace via `Partition Drive` and click `Add/Update...` to return to the "File System Maintenance" dialog and do remove the file system with version `40.1`.
 
-![alt text](hdtoolbox-single-filesystem.png)
+![alt text](assets/hdtoolbox-single-filesystem.png)
 
 Make sure the hard drive shows a status of `Not Changed`. Finish this part of the drive preparation by clicking the `Exit` button and return to Workbench.
 
@@ -175,7 +175,7 @@ At this point you can exit the emulator. Create a copy of the `epyx-handy-16.hdf
 
 Start WinUAE on your development machine. It should open the dialog for the properties of the emulator. Go to `Configurations` and in the bottom section provide the name `handy-16-workbench-135.uae` and description `Lynx Development Environment 1.6 - Workbench 1.3` for the configuration file. Click on `Save` to store it. 
 
-![alt text](winuae-new-configuration.png)
+![alt text](assets/winuae-new-configuration.png)
 
 Next, go through the `Hardware` section and change the following properties per node in the configuration tree:
 
@@ -192,7 +192,7 @@ Under `Hardware > Floppy Drives` make sure that both `DF0:` and `DF1:` are selec
 
 If you prefer, you can change the settings under `Host > Display` to be a fixed size for the emulator window:
 
-![alt text](winuae-display-settings.png)
+![alt text](assets/winuae-display-settings.png)
 
 Add the `epyx-handy-16.hdf` from step 1 as the sole hardfile.
 Enter `DH0` as the `Device` name and select `Manual geometry`. Enter the values from before:
@@ -206,7 +206,7 @@ Enter `DH0` as the `Device` name and select `Manual geometry`. Enter the values 
 
 Make sure that the `Bootable` checkbox is selected and that the HD Controller is set to unit 0 in the dropdown to the right of `UAE (uaehf.device)`. Your dialog should now resemble this:
 
-![alt text](winuae-add-hardfile.png) 
+![alt text](assets/winuae-add-hardfile.png) 
 
 Finally, save this configuration by going to the `Configurations` node again and clicking `Save` once more.
 
@@ -216,14 +216,14 @@ Insert the Workbench 1.3 diskette in `DF0` and boot the system from the floppy d
 
 Start the emulator with the current configuration. Workbench 1.3 should open and show three drives on the desktop. 
 
-![alt text](workbench-drives.png)
+![alt text](assets/workbench-drives.png)
 
 One is called `DH0:` and  represents the first partition created earlier from which the Amiga will boot later on. It needs to be formatted, or "initialized" as it is called under Workbench 1.3.
 
 Select `DH0:` and right-click to select `Initialize` from the `Disk` top menu. There will be a few dialogs, which you should confirm to start the initialization. 
 
-![alt text](workbench-initialize1.png)
-![alt text](workbench-initialize2.png)
+![alt text](assets/workbench-initialize1.png)
+![alt text](assets/workbench-initialize2.png)
 
 After a few seconds the name of the drive will change to `Empty`.
 
@@ -233,31 +233,31 @@ Now that the boot partition is formatted, the Handy backup for `DH0` (or `BootPa
 
 Insert the `quarterback-50.adf` diskette into `DF1` and open the drawer.
 
-![alt text](quarterback-drawer.png)
+![alt text](assets/quarterback-drawer.png)
 
 Start the *Quarterback* program. First, select the `BootPart` drive to restore to. After selecting that drive, click on `Restore`.
 
-![alt text](quarterback-dh0-restore.png)
+![alt text](assets/quarterback-dh0-restore.png)
 
 On the next dialog with "Restore options" deselect drive `DF0` and select the option to `Restore empty drawers` and click `OK` to continue to the next dialog. 
 
-![alt text](quarterback-dh0-restore-options.png)
+![alt text](assets/quarterback-dh0-restore-options.png)
 
 You will get a prompt that the inserted diskette is not a backup set. 
 
-![alt text](quarterback-backup-disk.png)
+![alt text](assets/quarterback-backup-disk.png)
 
 Insert `handy-16-dh0.adf` containing the backup set for the boot partition. It has just enough files to defer booting to the other partition `AmigaHD` which will be created later. Next, *Quarterback* will show all files in the backup set. 
 
-![alt text](quarterback-dh0-files.png)
+![alt text](assets/quarterback-dh0-files.png)
 
 Leave all files and folders checked, but do click on `T` and the `Tag` button to restore the empty `T` folder as well. Click on `Start` to restore the backup.
 
-![alt text](quarterback-start.png)
+![alt text](assets/quarterback-start.png)
 
 The restore progress will be reported and should complete quickly.
 
-![alt text](quarterback-dh0-restored.png)
+![alt text](assets/quarterback-dh0-restored.png)
 
 Quit Quarterdeck and close the drawer as well. Eject the Quarterback backup disk `handy-hd0.adf` floppy from `DF1` as well. You can restart the emulator now if you want.
 
@@ -277,7 +277,7 @@ Ram-Handler
 vdk-handler
 ```
 
-![alt text](workbench-bootpart-handlers.png)
+![alt text](assets/workbench-bootpart-handlers.png)
 
 Similarly, ask for the directory contents of `devs`. Notice that there are two example `MountList` files available for the ST225 and ST251 Seagate drives originally used in the Amiga 2000 setup. 
 
@@ -293,7 +293,7 @@ copy MountList.ST225 MountList
 SYS:c/ed MountList
 ```
 
-![alt text](workbench-copy-mountlist.png)
+![alt text](assets/workbench-copy-mountlist.png)
 
 The *Ed* editor will open and show the contents of the `MountList` file. Scroll down to find an entry for the `VDK:` device using the `vdk-handler` from the `DH0:devs` folder.
 
@@ -341,21 +341,21 @@ format drive DH0B name AmigaHD FFS
 
 After the formatting has completed, you should see a new drive called `AmigaHD` appear in Workbench.
 
-![alt text](image-81.png)
+![alt text](assets/image-81.png)
 
 The next step is restoring the *Quarterback* backup set with the Handy development kit. It is the 6 disk set that is available in this repository.
 
 Insert the *Quarterback* floppy disk again by and start the program. Select `AmigaHD` in the top right of the dialog and click `Restore`. 
 
-![alt text](quarterback-dh0b-restore.png)
+![alt text](assets/quarterback-dh0b-restore.png)
 
 In the next dialog keep `DF0` and `DF1` checked so two disk drives can be used to provide the backup set diskettes. Also, check `Restore empty drawers` like before.
 
-![alt text](quarterback-dh0b-restore-options.png)
+![alt text](assets/quarterback-dh0b-restore-options.png)
 
 Click `OK` and insert disks `handy-16-disk1.adf` with the catalog in drive `DF0`. After the list of files has loaded, click and tag the drawer `Empty` so it gets restored as well. Click the `Proceed` button to go to the final dialog.
 
-![alt text](quarterback-dh0b-restored.png)
+![alt text](assets/quarterback-dh0b-restored.png)
 
 Insert `handy-16-disk2.adf` into `DF1` and click on `Start` next. During the restoring of the files you will be prompted to insert disks 3 to 6 at the appropriate time in the respective drives `DF0` and `DF1`.
 
@@ -406,13 +406,13 @@ copy c/endif BootPart:c
 copy c/else BootPart:c
 ```
 
-![alt text](workbench-copy-tools.png)
+![alt text](assets/workbench-copy-tools.png)
 
 After you have copied over these files the setup is complete and you can boot into the new hardfile only configuration. Eject any `adf` files from the drive and restart the virtualized Amiga with `Ctrl+LeftAmiga+RightAmiga`. 
 
 The first time the new setup boots it encounters an error in the script file `s/startup-sequence.epyx` for the Epyx startup sequence. 
 
-![alt text](handy-unknown-command.png)
+![alt text](assets/handy-unknown-command.png)
 
 The command to run `virusx` is not succeeding as this software is not present on the partition. It wasn't included in the backup set. The quickest remedy is to remove the call.
 
@@ -431,8 +431,8 @@ Comment out the line that reads `virusx`
 Save the file by pressing `Esc`, then `x` and `Enter`.
 Reboot the emulator again and the Workbench screen should resemble this final result:
 
-![alt text](handy-clean-startup.png)
+![alt text](assets/handy-clean-startup.png)
 
 In the `Handy Development Window` you can use the Handy tooling to build Atari Lynx software. Have fun.
 
-![alt text](handy-asm.png)
+![alt text](assets/handy-asm.png)
