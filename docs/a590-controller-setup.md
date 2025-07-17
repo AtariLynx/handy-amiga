@@ -126,6 +126,7 @@ A reboot is now required. Click `Continue` to reboot.
 > rdbtool a590-st251.hdf add name=DH0 bootable=true pri=0 automount=true start=2 end=819 dostype=DOS1
 > rdbtool a590-st251.hdf fsadd FastFileSystem version=36.03
 > ```
+> where `FastFileSystem` is the FFS file system (version `36.03` and `12248` bytes in size) included on either the Workbench 1.3 Boot disk or A590 Setup disk. 
 
 ## Formatting hard drive main partition
 
