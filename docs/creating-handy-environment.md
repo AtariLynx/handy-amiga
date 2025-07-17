@@ -6,7 +6,7 @@ The guide involves several steps and assumes you have some experience in using A
 
 The preparation steps are as follows:
 
-1. Prepare a virtual hard disk of 40 MB that has two partitions.
+1. Prepare a virtual hard disk with required partitions.
 2. Create an emulator configuration for the Commodore Amiga 500/2000.
 3. Mount, format and restore partitions of the prepared hard disk.
 4. Finish setup, including startup sequence and additional preparation.
@@ -341,25 +341,9 @@ format drive DH0B name AmigaHD FFS
 
 After the formatting has completed, you should see a new drive called `AmigaHD` appear in Workbench.
 
-![alt text](assets/image-81.png)
+## Step 3: Restore AmigaHD partition
 
-The next step is restoring the *Quarterback* backup set with the Handy development kit. It is the 6 disk set that is available in this repository.
-
-Insert the *Quarterback* floppy disk again by and start the program. Select `AmigaHD` in the top right of the dialog and click `Restore`. 
-
-![alt text](assets/quarterback-dh0b-restore.png)
-
-In the next dialog keep `DF0` and `DF1` checked so two disk drives can be used to provide the backup set diskettes. Also, check `Restore empty drawers` like before.
-
-![alt text](assets/quarterback-dh0b-restore-options.png)
-
-Click `OK` and insert disks `handy-16-disk1.adf` with the catalog in drive `DF0`. After the list of files has loaded, click and tag the drawer `Empty` so it gets restored as well. Click the `Proceed` button to go to the final dialog.
-
-![alt text](assets/quarterback-dh0b-restored.png)
-
-Insert `handy-16-disk2.adf` into `DF1` and click on `Start` next. During the restoring of the files you will be prompted to insert disks 3 to 6 at the appropriate time in the respective drives `DF0` and `DF1`.
-
-The process should be finish almost as fast as you can swap disks. When it is done, close *Quarterback* return to Workbench. 
+Refer to the guide [Restoring Epyx Handy development kit](restoring-handy-amigahd.md) to restore the main files of the Epyx backup set.
 
 ## Step 4: Finalizing setup
 

@@ -6,6 +6,8 @@ In addition to the diskette files the repository also contains `hdf` hardfiles f
 
 **Currently only revision 1.6 (25th September 1991) is available.**
 
+![Handy development kit running in WinUAE](docs/assets/handy-asm.png)
+
 The virtualized Handy development environment requires the following:
 - [WinUAE](https://www.winuae.net/download/) or [FS-UAE](https://fs-uae.net/download) emulator
 - Kickstart ROM
