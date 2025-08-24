@@ -145,5 +145,3 @@ format drive DH0: name AmigaHD FFS
 ```
 
 ![alt text](assets/workbench-a590-format.png)
-
-## Restoring
