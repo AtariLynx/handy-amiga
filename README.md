@@ -38,11 +38,9 @@ The most important file is a accurately restored setup on a single hardfile with
 This hardfile can be mounted in a WinUAE configuration with Workbench 1.3. It contains two partitions:
 
 1. A boot partition named `BootPart` with the normal Old File System (OFS) 
-2. A second partition `AmigaHD` with the international fast file system to contain the Handy development kit files
+2. A second partition `AmigaHD` with the international Fast File System (FFS) to contain the Handy development kit files
 
 In addition, there are two hardfiles for Amiga hard disks with the restored backups, without any modifications. These disk are not bootable. Instead, mount these disks as additional drives to access the contents if you do not have *Quarterback* software available.
 
-- `handy-16-bootpart.hdf`: 1 MB hardfile with restored backup of set on `HandyDH0.adf` 
+- `handy-16-bootpart.hdf`: 1 MB hardfile with restored backup of set on `handy-16-dh0.adf` 
 - `handy-16-amigahd.hdf`: 8 MB hardfile with restored backup of Lynx Development System on set of disks `handy-16-disk1.adf` to `handy-16-disk6.adf`.
-
-
