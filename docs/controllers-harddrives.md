@@ -17,7 +17,7 @@ In the rest of the documentation you will find several approaches to the hard co
 
 There were a limited amount of hard disks available in 1988 to 1990 when the initial and later versions of the Handy development kits were released. Here is a list of ST-506 XT drives that work with a number of controllers mentioned below:
 
-|Brand|Type|Surfaces|Cylinders|Sectors (per track)|Size (in MB)|
+|Brand|Type|Surfaces|Sectors (per track)|Cylinders|Size (in MB)|
 |---|---|---|---|---|---|
 |Rodime|RO3055|6|17|870|40|
 |Seagate|ST-138N|4|26|615|32|
@@ -30,16 +30,24 @@ These drives are using the Modified Frequency Modulation (MFM) data encoding met
 
 Later drives used IDE, ATA or SCSI and had both bigger capacity and more options.
 
+## SCSI Hard disk types
+
+One known type for the SCSI drives that were used by Commodore is as follows:
+
+|Brand|Type|Surfaces|Sectors (per track)|Cylinders|Size (in MB)|
+|---|---|---|---|---|---|
+|Seagate|ST-325N|2|32|654|21|
+
 ## Hard disk controllers for Commodore Amiga
 
 The hard disk controllers commonly used in the Commodore Amiga computers include the following:
 
-|Controller|Hard disk|Boot partition|Main partition|Computer
-|---|---|---|---|---|
-|Commodore A2090|Seagate 20MB ST-225|DH0|DH0B|Amiga 2000|
-|Commodore A2090a|Seagate 40MB ST-251|DH0|DH0B|Amiga 2000|
-|[Commodore A590](./a590-controller-setup.md)|Seagate 40MB ST-251||DH0|Amiga 500|
-|Commodore A2091|Seagate 40MB ST-251||DH0|Amiga 2000|
+|Controller|Boot partition|Main partition|Computer|
+|---|---|---|---|
+|Commodore A2090|DH0|DH0B|Amiga 2000|
+|Commodore A2090a|DH0|DH0B|Amiga 2000|
+|[Commodore A590](./a590-controller-setup.md)||DH0|Amiga 500|
+|Commodore A2091||DH0|Amiga 2000|
 
 The newer controllers A590 for the Commodore Amiga 500 and the A2091 card for the Amiga 2000 could boot and mount from a single partition, which is named `DH0` by convention. All controllers after the Commodore A2090 had Rigid Disk Block (RDB) support, allowing partition and file system information to be stored on the hard disk itself. 
 

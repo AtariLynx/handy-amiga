@@ -19,17 +19,18 @@ This guide is about the A590 controller which needs to be added under `Settings 
 
 Next, at the `Settings > Hardware > CD & hard drives` section of the configuration click `Add Hardfile...`. 
 
-In this setup a Seagate ST251 drive of 40 MB will be used. The characteristics of this drive 
+In this setup a Seagate ST251 drive of 40 MB will be used. The characteristics of this drive are listed in the following table:
 
-|Drive property|ST251|ST225|
-|---|---|---|
-|Surfaces|6|4|
-|Sectors|17|17|
-|Cylinders|820|615|
-|Block size|512|512|
-|Hardfile size (bytes)|42.823.680|21.411.840|
-|Hardfile size (MB)|41|21|
-42.811.392
+|Drive property|ST251|ST225|ST325N|
+|---|---|---|---|
+|Type|XT|XT|SCSI|
+|Surfaces|6|4|2|
+|Sectors|17|17|32|
+|Cylinders|820|615|654|
+|Block size|512|512|512|
+|Hardfile size (bytes)|42.823.680|21.411.840|21.430.272|
+|Hardfile size (MB)|41|21|21|
+
 You can choose any hard drive type you want to use. Be sure to enter the minimal hardfile size in megabyte and corresponding geometry. The rest of this setup assumes the ST251 drive.
 
 In the next dialog add a 41 MB hardfile at the bottom and click `Create`.
@@ -38,7 +39,7 @@ In the next dialog add a 41 MB hardfile at the bottom and click `Create`.
 
 Save the file as `a590-st251.hdf` indicating it purpose for the 40MB ST251 disk for the A590 controller. Name the device `DH0` as it will be our primary drive and check the `Full drive/RDB mode`, as the A590 offered support for Rigid Disk Blocks (RDB) with Kickstart 1.3. Add a manual geometry with the ST251 geometry parameters from above.
 
-Under `HD Controller`select the `Commodore A590/A2091` controller you created earlier. Also, choose ID `0` for this controller if necessary.
+Under `HD Controller` select the `Commodore A590/A2091` controller you created earlier. Also, choose ID `0` for this controller if necessary.
 
 Click `OK` to complete the dialog and return to the main configuration screen and save the configuration as `epyx-handy-16-amiga500-a590.uae`.
 

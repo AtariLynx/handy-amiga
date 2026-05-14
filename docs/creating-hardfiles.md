@@ -2,8 +2,6 @@
 
 ## Manual creation of hardfiles
 
-
-
 ## Using RDBtool
 
 The tool `rdbtool` from the Amitools suite allows the creation of Rigid Disk Block (RDB) hardfiles from the command-line. It uses Python to run scripts that can create, initialize and manipulate hardfiles for the Commodore Amiga and its emulators.

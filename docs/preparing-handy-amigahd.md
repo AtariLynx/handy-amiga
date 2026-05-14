@@ -103,6 +103,16 @@ SYS:System/SetMap usa1 ;Activate the ()/* on keypad
 endcli >NIL:
 ```
 
+These `ed` commands may come in useful when making the edits and saving the file:
+
+|Command|Description|
+|---|---|
+|`Ctrl+B`|Delete a line|
+|`Esc,Q + Enter`|Quit without saving|
+|`Esc,X + Enter`|Save file and quit|
+|`Esc,SA + Enter`|Save file without quiting|
+|`Esc,SA newfile.txt + Enter`|Save as file `newfile.txt`|
+
 Restart the emulator at this point and validate that the startup works correctly
 
 The first time the new setup boots it encounters an error in the script file `AmigaHD:S/startup-sequence.epyx` for the Epyx startup sequence. 
